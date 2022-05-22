@@ -113,3 +113,31 @@ The above is the start of our xaml file. We can change the title, height, and th
     </StackPanel>
 </Window>
 ```
+
+**Textblock**
+-------------------
+Here we have two textblocks inside of our XAML file. They are contained in a stackpanel and use properties like LineBreak, Bold, Italic, Hyperlink, Span, and TextWrapping.
+- **LineBreak** - Create a newline
+- **Bold** - Make the words bold
+- **Italic** - Make the words Italic
+- **Hyperlink** - Create a hyperlink
+- **Span** - Split the textblock to set different properties
+- **TextWrapping** - Set how the textblock should handle words going over the edge
+
+```xaml
+<StackPanel>
+    <TextBlock>Hello <Bold>World</Bold> <Italic>And bye</Italic>
+    <LineBreak></LineBreak>A newline is creaed. My github can be found <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.github.com/kttra">here</Hyperlink>.
+    </TextBlock>
+    <TextBlock TextWrapping="Wrap" Foreground="BlueViolet">
+        It was a slippery slope and he was willing to slide all the way to the deepest depths.
+    </TextBlock>
+</StackPanel>
+```
+Navigation Event Arg
+```cs
+private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+{
+    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = @"http://www.github.com/kttra", UseShellExecute = true });
+}
+```
