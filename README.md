@@ -136,6 +136,12 @@ Here we have two textblocks inside of our XAML file. They are contained in a sta
 ```
 Navigation Event Arg
 ```cs
+public MainWindow()
+{
+    InitializeComponent();
+    myButton.FontSize = 15;
+    myButton.Content = "Hi there";
+}
 private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
 {
     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = @"http://www.github.com/kttra", UseShellExecute = true });
