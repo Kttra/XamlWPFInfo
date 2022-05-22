@@ -1,4 +1,4 @@
-# WPF Overview
+# WPF & XAML Overview
 C# WPF overview on xaml. Xaml stands for eXtensible Application Markup Language. Microsoft's version of XML for coding a graphical user inferace (GUI). It is an essential part of WPF. Each GUI element (a window or page), will consist of a XAML file and a CodeBehind (.cs) file. They both work together to create the window or page.
 
 The XAML file characterizes the GUI with all its element while the CS file handles all the evenets and has access to shape and manipulate the GUI elements. Each line of XAML code can be written in the CS file.
@@ -67,16 +67,16 @@ Some important window properties
 
 **xmlns**
 -------------------
-**xmlns** - Defines the namespace in which to resolve xml element names. It is defining the default namespace by which an XML element name should be resolved.
+- **xmlns** - Defines the namespace in which to resolve xml element names. It is defining the default namespace by which an XML element name should be resolved.
 
-**xmlns: d** - WPF Designer, it is a tool provided by VS that allows one to see what the user interface looks like without have to build and run the application each time. Will not have any impact on the application when you run the application (only shows in the designer).
+- **xmlns: d** - WPF Designer, it is a tool provided by VS that allows one to see what the user interface looks like without have to build and run the application each time. Will not have any impact on the application when you run the application (only shows in the designer).
 ```xaml
 d:DesignHeight="450"
 d:DesignWidth="800"
 ```
-**xmlns: mc** - Stands for markup compatibility. Leverages a markup compatibility pattern that is not necessarily XAML specific. Some code is interpreted strictly by the designer.
+- **xmlns: mc** - Stands for markup compatibility. Leverages a markup compatibility pattern that is not necessarily XAML specific. Some code is interpreted strictly by the designer.
 
-**xmlns: x** - Non-default namespace. Defintes a qualified namespace for XAML specific elements. If you want an element name to be resolved within this namespace qualify it with x.
+- **xmlns: x** - Non-default namespace. Defintes a qualified namespace for XAML specific elements. If you want an element name to be resolved within this namespace qualify it with x.
 ```xaml
 <Label x:Name="MyLabel"/>
 ```
