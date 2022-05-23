@@ -126,12 +126,14 @@ Here we have two textblocks inside of our XAML file. They are contained in a sta
 
 ```xaml
 <StackPanel>
-    <TextBlock>Hello <Bold>World</Bold> <Italic>And bye</Italic>
+    <TextBlock x:Name ="myTextBlock">Hello <Bold>World</Bold> <Italic>And bye</Italic>
     <LineBreak></LineBreak>A newline is creaed. My github can be found <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.github.com/kttra">here</Hyperlink>.
     </TextBlock>
     <TextBlock TextWrapping="Wrap" Foreground="BlueViolet">
-        It was a slippery slope and he was willing to slide all the way to the deepest depths.
+        It was a slippery slope and he was <Span Foreground="Black">willing</Span>
+        to slide all the way to the deepest depths.
     </TextBlock>
+    <Label>Hello World Label</Label>
 </StackPanel>
 ```
 Navigation Event Arg
@@ -146,4 +148,30 @@ private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e
 {
     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = @"http://www.github.com/kttra", UseShellExecute = true });
 }
+```
+
+**Textblock In CS**
+-------------------
+The below code shows some ways we can edit buttons or textblocks in the cs file side.
+
+```cs
+//Changing button front and text
+myButton.FontSize = 15;
+myButton.Content = "Hi there";
+//Changing textblock text and foreground
+myTextBlock.Text = "Hello from the CS side";
+myTextBlock.Foreground = Brushes.Blue;
+
+//Manually creating a textblock and altering its properties
+TextBlock myTb = new TextBlock();
+myTb.Text = "Text Created in CS file";
+myTb.Inlines.Add("\nAdded using inlines method ");
+myTb.Inlines.Add(new Run("Text added in the code.")
+{
+    Foreground = Brushes.Blue,
+    TextDecorations = TextDecorations.Underline,
+});
+myTb.TextWrapping = TextWrapping.Wrap;
+myTb.Foreground = Brushes.BlueViolet;
+this.Content = myTb; //Make this the content of the current window
 ```
