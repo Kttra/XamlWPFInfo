@@ -176,6 +176,15 @@ myTb.Foreground = Brushes.BlueViolet;
 this.Content = myTb; //Make this the content of the current window
 ```
 
+**Image**
+---------------
+The image control will be used a lot in some applications. It can also be contained in many of the WPF elements, so that's why this is one of the first things I wanted to cover first. We can load an image from a link or from a directory.
+
+```xaml
+<Image Width="30" Source="https://flyclipart.com/thumb2/random-icon-219113.png"></Image>
+<Image Width="30" Source="pack://application:,,,/Images/image.png"></Image>
+```
+
 **Label**
 -------------------
 Two ways to edit the text/content of a label.
@@ -270,3 +279,49 @@ A normal checkbox. Usually used for setting multiple settings or share preferenc
     <CheckBox FontSize="11" Margin="5,5,0,5">Strawberry</CheckBox>
 </StackPanel>
 ```
+
+**Password Box**
+---------------
+A password box let's us work with passwords. It works similar to a textbox. With the PasswordChar property we can change what character appears in the password box.
+
+```xaml
+<StackPanel Margin="5">
+    <Label FontSize="10">Name:</Label>
+    <TextBox></TextBox>
+    <Label FontSize="10">Password:</Label>
+    <PasswordBox PasswordChar="*" MaxLength="4"></PasswordBox>
+</StackPanel>
+```
+
+**Slider**
+---------------
+A simple UI control that allows you to slide left and right. In this code, we set up a slider with a textblock. We want the textblock to update based on the value of the slider.
+
+```xaml
+<StackPanel VerticalAlignment="Center" Margin="5">
+    <Slider x:Name="mySlider" Maximum="100" Minimum="0" TickFrequency="10" IsSnapToTickEnabled="True"
+            Value="10" ValueChanged="mySlider_ValueChanged"></Slider>
+    <TextBlock x:Name="sliderTextblock"></TextBlock>
+</StackPanel>
+```
+For our ValueChanged event handler we have to make sure that we have a check in place to allow for the textblock to load before editing it.
+
+```cs
+private void mySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+{
+    //Need this check so that slider can be initialized into the UI
+    if(sliderTextblock != null)
+    {
+        sliderTextblock.Text = "Slider value: " + mySlider.Value.ToString();
+    }
+}
+```
+We can use xaml code to bind the textblock's font property to the slider's value property.
+```xaml
+<StackPanel VerticalAlignment="Center" Margin="5">
+    <Slider x:Name="mySlider" Maximum="100" Minimum="0" TickFrequency="10" IsSnapToTickEnabled="True"
+            Value="10" ValueChanged="mySlider_ValueChanged"></Slider>
+    <TextBlock x:Name="sliderTextblock" FontSize = "{Binding ElementName = mySlider, Path=Value, UpdateSourceTrigger = PropertyChanged}"></TextBlock>
+</StackPanel>
+```
+
