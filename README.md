@@ -233,16 +233,40 @@ private void testButton_Click(object sender, RoutedEventArgs e)
     testLabel.FontSize += 1;
 }
 ```
-**Radio Button**
+
+**RadioButton**
 ---------------
-When one button is pressed, the other buttons will cancel. Able to have a selection of a couple of buttons which belong together and once we press on one, the others will not be active at the same time. We can separate radio button groups by setting a group name.
+When one button is pressed, the other buttons will cancel. Able to have a selection of a couple of buttons which belong together and once we press on one, the others will not be active at the same time. We can separate radio button groups by setting a group name. Along with the GroupName property, we also have the IsChecked property to set the default selection if we wish to do so.
+
+There are also event handlers are event handlers for when a radio button is checked and unchecked. I will not go into detail on this here.
 
 ```xaml
 <StackPanel>
     <Label FontWeight="Bold" FontSize="10">Who do you vote for?</Label>
-    <RadioButton GroupName="Candidates">Candidate 1</RadioButton>
+    <RadioButton GroupName="Candidates" IsChecked="True">Candidate 1</RadioButton>
     <RadioButton GroupName="Candidates">Candidate 2</RadioButton>
     <RadioButton GroupName="Candidates">Candidate 3</RadioButton>
     <RadioButton GroupName="Candidates">Candidate 4</RadioButton>
+</StackPanel>
+```
+If you want to add an image instead of text for the radio button, we can use a wrap panel. We will also want to change the alignment so that the radio button is centered with the image.
+
+```xaml
+<RadioButton GroupName="Candidates" VerticalContentAlignment="Center">
+    <WrapPanel>
+        <Image Width="30" Source="https://flyclipart.com/thumb2/random-icon-219113.png"></Image>
+    </WrapPanel>
+</RadioButton>
+```
+
+**CheckBox**
+---------------
+A normal checkbox. Usually used for setting multiple settings or share preferences. Similar to radio buttons, checkboxes also have the checked and unchecked event handler. We can also insert an image in a similar way. In addition, there is a property called IsThreeState which is used generally for a select all checkbox.
+
+```xaml
+<StackPanel Orientation="Horizontal">
+    <Label FontSize="11">Ice Cream:</Label>
+    <CheckBox FontSize="11" Margin="5,5,0,5">Chocolate</CheckBox>
+    <CheckBox FontSize="11" Margin="5,5,0,5">Strawberry</CheckBox>
 </StackPanel>
 ```
