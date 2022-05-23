@@ -233,3 +233,16 @@ private void testButton_Click(object sender, RoutedEventArgs e)
     testLabel.FontSize += 1;
 }
 ```
+**Radio Button**
+---------------
+When one button is pressed, the other buttons will cancel. Able to have a selection of a couple of buttons which belong together and once we press on one, the others will not be active at the same time. We can separate radio button groups by setting a group name.
+
+```xaml
+<StackPanel>
+    <Label FontWeight="Bold" FontSize="10">Who do you vote for?</Label>
+    <RadioButton GroupName="Candidates">Candidate 1</RadioButton>
+    <RadioButton GroupName="Candidates">Candidate 2</RadioButton>
+    <RadioButton GroupName="Candidates">Candidate 3</RadioButton>
+    <RadioButton GroupName="Candidates">Candidate 4</RadioButton>
+</StackPanel>
+```
