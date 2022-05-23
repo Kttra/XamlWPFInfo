@@ -5,7 +5,7 @@ The XAML file characterizes the GUI with all its element while the CS file handl
 
 **XAML Basics**
 ---------------------------
-Each element needs an opening tag and a closing tag. Below is an example of creating a label. Between the two tags is the content that can vary depending on what element you are using (a label takes in a string).
+Each element needs an opening tag and a closing tag. Below is an example of creating a label. Between the two tags is the content that can vary depending on what element you are using (a label takes in a string). When creating events in visual studio, you can always press ctrl+space to get suggestions or to see the contents or properties of an element as there are too many to cover.
 
 ```xaml
 <Label>Hello World</Label>
@@ -174,4 +174,62 @@ myTb.Inlines.Add(new Run("Text added in the code.")
 myTb.TextWrapping = TextWrapping.Wrap;
 myTb.Foreground = Brushes.BlueViolet;
 this.Content = myTb; //Make this the content of the current window
+```
+
+**Label**
+-------------------
+Two ways to edit the text/content of a label.
+
+```xaml
+<Label Content="Hello World"></Label>
+<Label>Hello World</Label>
+```
+It is possible to contain other elements in the label like a stackpanel, image, textbox, and accesstext. We can also change the orientation of a stackpanel to horizontal. Some elements we can edit in a label are the Margin, BorderBrush, and BorderThickness.
+
+```xaml
+<Label Margin="1,1,1,1"
+       BorderBrush="Black"
+       BorderThickness="1">
+    <StackPanel Orientation="Horizontal">
+            <Label>Hello World</Label>
+            <Image Source="https://flyclipart.com/thumb2/random-icon-219113.png" Width="30"></Image>
+            <AccessText FontSize="17" Text="Image"/>
+            <TextBox FontSize="17" Width="234" Margin="5,0,5,0"></TextBox>
+    </StackPanel>
+</Label>
+```
+
+**TextBox**
+-------------------
+The textbox is very similar to a label and has some similar properties. Some of the properties are Fontsize, Margin, AcceptsReturn, TextWrapping, SpellCheck.IsEnabled, Foreground, Background, IsReadOnly, and Language.
+
+```cs
+<TextBox FontSize="17"
+         Margin="2,2,2,2"
+         AcceptsReturn="True"
+         TextWrapping="Wrap"
+         SpellCheck.IsEnabled="True"
+         Language="en-US"
+         Foreground="AntiqueWhite"
+         Background="Beige"
+         IsReadOnly="False">
+</TextBox>
+```
+
+**Button**
+---------------
+A button can allow the user to interact with the application.
+```xaml
+<StackPanel Orientation="Horizontal">
+    <Label x:Name="testLabel">Label testing</Label>
+    <Button x:Name ="testButton" Width="80" Height="20" Click="testButton_Click">Click me!</Button>
+</StackPanel>
+```
+In the CS file, we can have a Button_Click event. In this example, we change the label color to gold and increase the font size by one everytime the button is clicked.
+```cs
+private void testButton_Click(object sender, RoutedEventArgs e)
+{
+    testLabel.Foreground = Brushes.Gold;
+    testLabel.FontSize += 1;
+}
 ```
