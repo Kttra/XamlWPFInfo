@@ -353,3 +353,27 @@ private void myCalender_SelectedDatesChanged(object sender, SelectionChangedEven
 }
 ```
 
+**DatePicker**
+---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179873414-d9357b42-a690-48ad-bd95-84d7b162073f.png"><img>
+</p>
+
+A date picker is very similar to the calendar control except it comes in an included textbox. Some common properties include: SelectedDate, SelectedDateFormat, SelectedDateChanged, and DatePicker.BlackoutDates.
+```xaml
+<StackPanel>
+    <DatePicker SelectedDate="07/19/2022" SelectedDateFormat="Short" SelectedDateChanged="DatePicker_SelectedDateChanged">
+        <DatePicker.BlackoutDates>
+            <CalendarDateRange Start="07/20/2022" End="07/23/2022"/>
+        </DatePicker.BlackoutDates>
+    </DatePicker>
+</StackPanel>
+```
+Like the calendar control, we can make a SelectedDateChanged handler.
+```cs
+private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+{
+    string selectedDate = ((DatePicker)sender).SelectedDate.ToString();
+    //Do something with selectedDate
+}
+```
