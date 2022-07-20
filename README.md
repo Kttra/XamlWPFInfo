@@ -436,3 +436,40 @@ private void myExpander_Collapsed(object sender, RoutedEventArgs e)
     myExpander.Header = "Click me to expand";
 }
 ```
+
+**Grid**
+---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179882835-cbc6a6dc-2e44-40ad-b20c-376d9cb79191.png"><img>
+</p>
+
+A Grid contains a collection of UI Element objects.
+
+```xaml
+<Grid ShowGridLines="false">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="Auto"/>
+        <!--Width = "0.33*" With "*" means that the percentage value will be taken, without is pixel value-->
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <Rectangle Grid.Column="0" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="0" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="0" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="1" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="1" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="1" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="2" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="2" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+    <Rectangle Grid.Column="2" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+    <Button Grid.Column="0" Grid.Row="0">Button 0</Button>
+    <TextBlock Grid.Column="0" Grid.Row="1" TextAlignment="Center">Grid example</TextBlock>
+    <Button Grid.Column="1" Grid.Row="1">Button 1</Button>
+    <Button Width="60" Grid.Column="2" Grid.Row="2">Button 2</Button>
+</Grid>
+```
