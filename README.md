@@ -116,6 +116,10 @@ The above is the start of our xaml file. We can change the title, height, and th
 
 **Textblock**
 -------------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179880217-a2e907fb-3c23-4485-ab77-cc13360a3d57.png"><img>
+</p>
+
 Here we have two textblocks inside of our XAML file. They are contained in a stackpanel and use properties like LineBreak, Bold, Italic, Hyperlink, Span, and TextWrapping.
 - **LineBreak** - Create a newline
 - **Bold** - Make the words bold
@@ -187,6 +191,10 @@ The image control will be used a lot in some applications. It can also be contai
 
 **Label**
 -------------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179880103-a1308b5a-8f08-45dd-b1d6-dee1008c26b5.png"><img>
+</p>
+
 Two ways to edit the text/content of a label.
 
 ```xaml
@@ -210,6 +218,10 @@ It is possible to contain other elements in the label like a stackpanel, image, 
 
 **TextBox**
 -------------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179880064-d1d4dbdc-e1d5-4a83-b6b3-be8276871ecf.png"><img>
+</p>
+
 The textbox is very similar to a label and has some similar properties. Some of the properties are Fontsize, Margin, AcceptsReturn, TextWrapping, SpellCheck.IsEnabled, Foreground, Background, IsReadOnly, and Language.
 
 ```cs
@@ -227,6 +239,10 @@ The textbox is very similar to a label and has some similar properties. Some of 
 
 **Button**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179880009-a0f8be18-8bbe-4aa4-96f0-13d4ac5153d3.png"><img>
+</p>
+
 A button can allow the user to interact with the application.
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -245,6 +261,10 @@ private void testButton_Click(object sender, RoutedEventArgs e)
 
 **RadioButton**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179879951-9bd64ca0-7046-4227-8dcb-389ee15f08ee.png"><img>
+</p>
+
 When one button is pressed, the other buttons will cancel. Able to have a selection of a couple of buttons which belong together and once we press on one, the others will not be active at the same time. We can separate radio button groups by setting a group name. Along with the GroupName property, we also have the IsChecked property to set the default selection if we wish to do so.
 
 There are also event handlers are event handlers for when a radio button is checked and unchecked. I will not go into detail on this here.
@@ -270,6 +290,10 @@ If you want to add an image instead of text for the radio button, we can use a w
 
 **CheckBox**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179879915-75cb48be-b18a-4b85-9db4-a66070ece53e.png"><img>
+</p>
+
 A normal checkbox. Usually used for setting multiple settings or share preferences. Similar to radio buttons, checkboxes also have the checked and unchecked event handler. We can also insert an image in a similar way. In addition, there is a property called IsThreeState which is used generally for a select all checkbox.
 
 ```xaml
@@ -282,6 +306,10 @@ A normal checkbox. Usually used for setting multiple settings or share preferenc
 
 **Password Box**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179879859-47294591-c9cb-4dd9-b437-83f06e358f0b.png"><img>
+</p>
+
 A password box let's us work with passwords. It works similar to a textbox. With the PasswordChar property we can change what character appears in the password box.
 
 ```xaml
@@ -295,6 +323,10 @@ A password box let's us work with passwords. It works similar to a textbox. With
 
 **Slider**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179879751-2d7eea5d-e7bc-4999-81b0-988dcd293314.png"><img>
+</p>
+
 A simple UI control that allows you to slide left and right. In this code, we set up a slider with a textblock. We want the textblock to update based on the value of the slider.
 
 ```xaml
