@@ -325,3 +325,23 @@ We can use xaml code to bind the textblock's font property to the slider's value
 </StackPanel>
 ```
 
+**Calender**
+---------------
+A simple calender control. Some common properteries for a calender are: SelectedDate, DisplayMode, and SelectedDatesChanged.
+```xaml
+<StackPanel Orientation="Horizontal">
+    <Viewbox Stretch="Uniform" Height="102" Width="145" HorizontalAlignment="Left">
+        <Calendar SelectedDate="01.01.2022" DisplayMode="Month" x:Name="myCalender" SelectedDatesChanged="myCalender_SelectedDatesChanged"></Calendar>
+    </Viewbox>
+    <TextBlock x:Name="calenderText"></TextBlock>
+</StackPanel>
+```
+In C# we can use the SelectedDatesChanged handler to change the text of a textblock whenever the date selected is changed.
+```csharp
+private void myCalender_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+{
+    if(calenderText != null)
+        calenderText.Text = myCalender.SelectedDate.ToString();
+}
+```
+![image](https://user-images.githubusercontent.com/100814612/179871114-fa0fdd32-1309-48d0-9fcc-6c8966416d88.png)
