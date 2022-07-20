@@ -469,7 +469,11 @@ A Grid contains a collection of UI Element objects.
     <Rectangle Grid.Column="2" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
     <Button Grid.Column="0" Grid.Row="0">Button 0</Button>
     <TextBlock Grid.Column="0" Grid.Row="1" TextAlignment="Center">Grid example</TextBlock>
-    <Button Grid.Column="1" Grid.Row="1">Button 1</Button>
+    <Button Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">Button 1</Button>
     <Button Width="60" Grid.Column="2" Grid.Row="2">Button 2</Button>
 </Grid>
 ```
+
+**Layout Panels**
+----------
+Throughout most of this project, I have mainly used stackpanels to showcase the controls. There are other type of layout panels such as WrapPanel, DockPanel, and Canvas. WrapPanel allows the contained controls to wrap to the next line and adjust itself accordingly to the window size. DockPanel changes the position of an element relative to other elements within the same container. A canvas is an open space where you can position your elements in.
