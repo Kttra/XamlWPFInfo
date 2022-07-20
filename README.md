@@ -377,3 +377,30 @@ private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEvent
     //Do something with selectedDate
 }
 ```
+
+**Expander**
+---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179874156-a2f88462-d26a-411e-a973-3c68e3483852.png"><img>
+</p>
+
+An expander is a useful control to use when you are trying to hide a spoiler or a large block of text (other controls can also be placed inside). Clicking on the expander will unhide whatever is instead of it. Clicking on it again will hide its contents. Common properteries: Header, IsExpanded, Expanded, and Collapsed.
+
+```xaml
+<StackPanel>
+    <Expander x:Name="myExpander" Header="Click me to expand" IsExpanded="False" Expanded="Expander_Expanded" Collapsed="myExpander_Collapsed">
+        <TextBlock TextWrapping="Wrap" FontSize="10">He wore the surgical mask in public not to keep from catching a virus, but to keep people away from him.</TextBlock>
+    </Expander>
+</StackPanel>
+```
+Expanded and collapsed code behind.
+```cs
+private void Expander_Expanded(object sender, RoutedEventArgs e)
+{
+    myExpander.Header = "";
+}
+private void myExpander_Collapsed(object sender, RoutedEventArgs e)
+{
+    myExpander.Header = "Click me to expand";
+}
+```
