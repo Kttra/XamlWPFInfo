@@ -327,6 +327,10 @@ We can use xaml code to bind the textblock's font property to the slider's value
 
 **Calender**
 ---------------
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100814612/179871114-fa0fdd32-1309-48d0-9fcc-6c8966416d88.png" width="250" height="250"><img>
+</p>
+
 A simple calender control. Some common properteries for a calender are: SelectedDate, DisplayMode, and SelectedDatesChanged.
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -344,4 +348,4 @@ private void myCalender_SelectedDatesChanged(object sender, SelectionChangedEven
         calenderText.Text = myCalender.SelectedDate.ToString();
 }
 ```
-![image](https://user-images.githubusercontent.com/100814612/179871114-fa0fdd32-1309-48d0-9fcc-6c8966416d88.png)
+
