@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         WindowState="Normal"
         WindowStartupLocation="CenterScreen"
-        Title="Xaml Tutorial" Height="300" Width="400">
+        Title="Xaml Tutorial" Height="690" Width="400">
     <StackPanel>
         <Label>Hello World</Label>
         <Button x:Name="myButton">Click me!</Button>
         <StackPanel>
-            <TextBlock x:Name ="myTextBox">Hello <Bold>World</Bold> <Italic>And bye</Italic>
+            <TextBlock x:Name ="myTextBlock">Hello <Bold>World</Bold> <Italic>And bye</Italic>
             <LineBreak></LineBreak>A newline is creaed. My github can be found <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.github.com/kttra">here</Hyperlink>.
             </TextBlock>
             <TextBlock TextWrapping="Wrap" Foreground="BlueViolet">
@@ -20,5 +20,106 @@
                 to slide all the way to the deepest depths.
             </TextBlock>
         </StackPanel>
+        <Label Margin="1,1,1,1"
+               BorderBrush="Black"
+               BorderThickness="1">
+            <StackPanel Orientation="Horizontal">
+                <Label>Hello World</Label>
+                <Image Source="https://flyclipart.com/thumb2/random-icon-219113.png" Width="30"></Image>
+                <AccessText FontSize="17" Text="Image"/>
+                <TextBox FontSize="17" Width="234" Margin="5,0,5,0"></TextBox>
+            </StackPanel>
+        </Label>
+        <TextBox FontSize="17"
+                 Margin="2,2,2,2"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 SpellCheck.IsEnabled="True"
+                 Language="en-US"
+                 Foreground="Black"
+                 Background="White"
+                 IsReadOnly="False">
+        </TextBox>
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="testLabel">Label testing</Label>
+            <Button x:Name ="testButton" Width="80" Height="20" Click="testButton_Click">Click me!</Button>
+        </StackPanel>
+        <StackPanel>
+            <Label FontWeight="Bold" FontSize="10">Who do you vote for?</Label>
+            <RadioButton GroupName="Candidates" IsChecked="True">Candidate 1</RadioButton>
+            <RadioButton GroupName="Candidates">Candidate 2</RadioButton>
+            <RadioButton GroupName="Candidates" VerticalContentAlignment="Center">
+                <WrapPanel>
+                    <Image Width="30" Source="https://flyclipart.com/thumb2/random-icon-219113.png"></Image>
+                </WrapPanel>
+            </RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label FontSize="11">Ice Cream:</Label>
+            <CheckBox x:Name ="checkBoxChoco" FontSize="11" Margin="5,5,0,5" IsThreeState="False">Chocolate</CheckBox>
+            <CheckBox FontSize="11" Margin="5,5,0,5">Strawberry</CheckBox>
+        </StackPanel>
+        <StackPanel Margin="5">
+            <Label FontSize="10">Name:</Label>
+            <TextBox></TextBox>
+            <Label FontSize="10">Password:</Label>
+            <PasswordBox PasswordChar="*" MaxLength="4"></PasswordBox>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Margin="5">
+            <Slider x:Name="mySlider" Maximum="100" Minimum="0" TickFrequency="10" IsSnapToTickEnabled="True"
+                    Value="10" ValueChanged="mySlider_ValueChanged"></Slider>
+            <TextBlock x:Name="sliderTextblock" FontSize = "{Binding ElementName = mySlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Viewbox Stretch="Uniform" Height="102" Width="145" HorizontalAlignment="Left">
+                <Calendar SelectedDate="01.02.2022" DisplayMode="Month" x:Name="myCalender" SelectedDatesChanged="myCalender_SelectedDatesChanged">
+                </Calendar>
+            </Viewbox>
+            <TextBlock x:Name="calenderText"></TextBlock>
+        </StackPanel>
+        <StackPanel>
+            <DatePicker SelectedDate="07/19/2022" SelectedDateFormat="Short" SelectedDateChanged="DatePicker_SelectedDateChanged">
+                <DatePicker.BlackoutDates>
+                    <CalendarDateRange Start="07/20/2022" End="07/23/2022"/>
+                </DatePicker.BlackoutDates>
+            </DatePicker>
+        </StackPanel>
+        <StackPanel>
+            <Expander x:Name="myExpander" Header="Click me to expand" IsExpanded="False" Expanded="Expander_Expanded" Collapsed="myExpander_Collapsed">
+                <TextBlock TextWrapping="Wrap" FontSize="10">He wore the surgical mask in public not to keep from catching a virus, but to keep people away from him.</TextBlock>
+            </Expander>
+        </StackPanel>
+        <Grid ShowGridLines="false">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="Auto"/>
+                <!--Width = "0.33*" With "*" means that the percentage value will be taken, without is pixel value-->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="0" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="0" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="1" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="1" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="1" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="2" Grid.Row="0" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="2" Grid.Row="1" Stroke="Blue" Fill="Transparent" />
+            <Rectangle Grid.Column="2" Grid.Row="2" Stroke="Blue" Fill="Transparent" />
+            <Button Grid.Column="0" Grid.Row="0">Button 0</Button>
+            <TextBlock Grid.Column="0" Grid.Row="1" TextAlignment="Center">Grid example</TextBlock>
+            <Button Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">Button 1</Button>
+            <Button Width="60" Grid.Column="2" Grid.Row="2">Button 2</Button>
+        </Grid>
+        <WrapPanel>
+            <Button Width="auto" Height="auto">Button 1</Button>
+            <Button Width="auto" Height="auto">Button 1</Button>
+            <Button Width="auto" Height="auto">Button 1</Button>
+            <Button Width="auto" Height="auto">Button 1</Button>
+        </WrapPanel>
     </StackPanel>
 </Window>

@@ -25,9 +25,9 @@ namespace WpfApp1
             InitializeComponent();
             myButton.FontSize = 15;
             myButton.Content = "Hi there";
-            myTextBox.Text = "Hello from the CS side";
-            myTextBox.Foreground = Brushes.Blue;
-
+            myTextBlock.Text = "Hello from the CS side";
+            myTextBlock.Foreground = Brushes.Blue;
+            /*
             TextBlock myTb = new TextBlock();
             myTb.Text = "Text Created in CS file";
             myTb.Inlines.Add("\nAdded using inlines method ");
@@ -39,12 +39,47 @@ namespace WpfApp1
             myTb.TextWrapping = TextWrapping.Wrap;
             myTb.Foreground = Brushes.BlueViolet;
             this.Content = myTb; //Make this the content of the current window
+            */
+            calenderText.Text = myCalender.SelectedDate.ToString();
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = @"http://www.github.com/kttra", UseShellExecute = true });
             //System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
+        }
+        private void testButton_Click(object sender, RoutedEventArgs e)
+        {
+            testLabel.Foreground = Brushes.Gold;
+            testLabel.FontSize += 1;
+        }
+
+        private void mySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            //Need this check so that slider can be initialized into the UI
+            if(sliderTextblock != null)
+            {
+                sliderTextblock.Text = "Slider value: " + mySlider.Value.ToString();
+            }
+        }
+
+        private void myCalender_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(calenderText != null)
+                calenderText.Text = myCalender.SelectedDate.ToString();
+        }
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedDate = ((DatePicker)sender).SelectedDate.ToString();
+            //Do something with selectedDate
+        }
+        private void Expander_Expanded(object sender, RoutedEventArgs e)
+        {
+            myExpander.Header = "";
+        }
+        private void myExpander_Collapsed(object sender, RoutedEventArgs e)
+        {
+            myExpander.Header = "Click me to expand";
         }
     }
 }
